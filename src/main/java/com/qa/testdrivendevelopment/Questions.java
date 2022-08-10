@@ -28,7 +28,16 @@ public class Questions {
 	 * multChar("Hi-There") → "HHHiii---TTThhheeerrreee"
 	 */
 	public String multiChar(String input) {
-		return "";
+		
+		StringBuilder strB = new StringBuilder();
+		for (int i = 0; i < input.length(); i++)
+		{
+			strB.append(input.substring(i,i+1));
+			strB.append(input.substring(i,i+1));
+			strB.append(input.substring(i,i+1));		
+		}
+		return strB.toString();
+	
 	}
 
 	/**
@@ -45,7 +54,25 @@ public class Questions {
 	 */
 
 	public String sandwichFilling(String sandwich) {
-		return "";
+	      sandwich = sandwich.toLowerCase();
+	      sandwich = sandwich.replaceAll("bread" , "");
+	      sandwich = sandwich.replaceAll("xx" , "");
+	      sandwich = sandwich.replaceAll("yy" , "");
+	      
+	      StringBuilder strB = new StringBuilder();
+	      
+	      char[] reverse = sandwich.toCharArray();
+	      for (int i = reverse.length - 1; i >= 0; i --)
+	      {
+	    	 strB.append(reverse[i]);
+	    	 
+	      }
+	      
+	      
+	      
+	      return strB.toString();
+	      
+	      
 	}
 
 	/**
@@ -61,6 +88,55 @@ public class Questions {
 	 * evenlySpaced(4, 60, 9) → false
 	 */
 	public boolean evenlySpaced(int a, int b, int c) {
+		//c  - b -a
+		if (a < b && b < c)
+		{
+			if (c - b == b - a)
+			{
+				return true;
+			}
+		}
+		//a - b -c 
+		if (a > b && b > c)
+		{
+			if (a - b == b - c)
+			{
+				return true;
+			}
+		}
+		//a - c - b
+		if (a > c && c < b)
+		{
+			if (a - c == c - b)
+			{
+				return true;
+			}
+		}
+		//b - c - a
+		if (a < c && c < b)
+		{
+			if (b - c == c - a)
+			{
+				return true;
+			}
+		}
+		//c - a - b
+		if (c > a && a > b)
+		{
+			if (c - a == a - b)
+			{
+				return true;
+			}
+		}
+		
+		//b - a- c
+		if (b > a && a > c)
+		{
+			if (b - a == a - c)
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -138,7 +214,37 @@ public class Questions {
 	 * fizzBuzz(8) → null
 	 */
 	public String fizzBuzz(int number) {
-    	return "";
+    	String a = "" ;
+		
+		if (number  % 3 == 0 )
+    	{
+    		a = "fizz";
+    	}
+    	
+    	if (number % 5 == 0)
+    	{
+    		a = "buzz";
+    	}
+    	
+    	if (number % 5 == 0 && number  % 3 == 0 )
+    	{
+    		a = "fizzbuzz";
+    	}
+    	
+    	
+    	if (number % 5 != 0 && number  % 3 != 0 )
+    	{
+    		a = null;
+    	}
+    	
+    	
+		
+    	
+    	
+		
+		return a;
+		
+		
 	}
 
 	/**
