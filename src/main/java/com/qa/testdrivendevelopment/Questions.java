@@ -152,7 +152,31 @@ public class Questions {
 	 * nMid("Chocolate", 1) → "Choclate"<br>
 	 */
 	public String nMid(String input, int n) {
-    	return "";
+    
+		StringBuilder strB = new StringBuilder();
+		
+		strB.append(input);
+		
+		for (int i = 0; i < n ; i++)
+		{
+			int l = strB.length();
+			
+			if (l % 2 == 0)
+	    {
+				strB = strB.deleteCharAt((l/2)-1);
+		}
+	    
+	    else  {
+		strB = strB.deleteCharAt(l/2);
+	    
+		
+		}
+	    }
+		
+	
+	return strB.toString();
+
+
 	}
 
 	/**
@@ -168,7 +192,22 @@ public class Questions {
 	 * endsJava("pythoniscool") → false <br>
 	 */
 	public boolean endsJava(String input) {
-    	return false;
+		
+		input = input.toLowerCase();
+    	
+		if (input.endsWith("java"))
+		{
+			return  true;
+		}
+		
+		
+		
+		else {
+			return  false;
+		}
+		
+		
+		
 	}
 
 	/**
@@ -183,7 +222,13 @@ public class Questions {
 	 * HINT: "a" == "a" if false HINT: "a".equals("a") is true
 	 */
 	public int superBlock(String input) {
-    	return -1;
+    	
+		
+		
+		
+		
+		
+		return -1;
 	}
 
 	/**
@@ -199,7 +244,22 @@ public class Questions {
 	 * HINT: String.toLowerCase
 	 */
 	public int amISearch(String sentence) {
-    	return -1;
+    	sentence= sentence.toLowerCase();
+    	String str[] = sentence.split(" ");
+    	int count = 0;
+    	String ams = "am";
+    	
+    	for (int i = 0; i<str.length; i++)
+    	{
+    		if(ams.equals(str[i]))
+    		{
+    			count++;
+    		}
+    		
+    	
+    	}
+ 	return count;
+
 	}
 
 	/**
@@ -285,6 +345,10 @@ public class Questions {
 	 * HINT: String.charAt
 	 */
 	public boolean compares(String word, int index, char letter) {
-    	return false;
+    	
+		
+		
+		
+		return false;
 	}
 }
